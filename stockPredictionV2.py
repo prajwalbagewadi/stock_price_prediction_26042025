@@ -75,6 +75,16 @@ def createDataset(dataset,time_step=1):
         dataY.append(dataset[i+time_step,0])
     return np.array(dataX),np.array(dataY)
 
+time_step=3
+x_train,y_train=createDataset(train_data,time_step)
+x_test,y_test=createDataset(test_data,time_step)
+
+print(f"x_train.shape={x_train.shape}")
+print(f"y_train.shape={y_train.shape}")
+print(f"x_test.shape={x_test.shape}")
+print(f"y_test.shape={y_test.shape}")
+
+#reshape input into 3d [samples,time steps,features] which is required for lstm
 
 #preprocess the Data- train and test
 #create a stacked lstm model
